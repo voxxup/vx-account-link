@@ -1,0 +1,36 @@
+image: vircd/serverless:1.0
+
+before_script:
+  - npm install
+  - npm install -g npm-cli-login@0.0.10
+
+deploy-prod:
+  stage: deploy
+  environment:
+    name: prod
+  script:
+    - npm run build
+    - echo user name= $USERNAME, user email= $EMAIL, registry= $REGISTRY_URL
+    - npm set registry $REGISTRY_URL
+    - npm-cli-login -u $USERNAME -p $PASSWORD -e $EMAIL -r $REGISTRY_URL
+    - npm publish build
+    - npm set registry $DEFAULT_REGISTRY_URL
+  only:
+    refs:
+      - tags # run only for tags
+    variables:
+      - $CI_PIPELINE_SOURCE == "web" # Run only when pipeline is triggered via Gitlab UI
+
+deploy-test:
+  stage: deploy
+  environment:
+    name: test
+  script:
+    - npm run build
+    - echo user name= $USERNAME, user email= $EMAIL, registry= $REGISTRY_URL
+    - npm set registry $REGISTRY_URL
+    - npm-cli-login -u $USERNAME -p $PASSWORD -e $EMAIL -r $REGISTRY_URL
+    - npm publish build
+    - npm set registry $DEFAULT_REGISTRY_URL
+  only:
+    - VS-40-1

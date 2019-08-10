@@ -1,0 +1,29 @@
+{
+  "actionType": "alexa",
+  "oauthConfig": {
+    "implicit": {
+      "login": {
+        "authentication": {
+          "reuqest": {
+            "oauthEndPoint": "http://oauth/bajaj.com/authenticate",
+            "requestMethod": "POST",
+            "requestOptions": ""
+          },
+          "response": {
+            "userNameParam": "name",
+            "passwordParam": "pwd"
+          }
+        },
+        "view": {
+          "loginPage": "login",
+          "formFieldName": {
+            "userName": "name",
+            "password": "password"
+          }
+        }
+      }
+    },
+    "authorization": {}
+  },
+  "non-oauth-config": {}
+}
