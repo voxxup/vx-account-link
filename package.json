@@ -24,10 +24,10 @@
     "lodash": "^4.17.11",
     "winston": "^3.2.1",
     "config": "^3.0.1",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-session": "^1.16.2",
     "cookie-parser": "^1.4.4",
-    "body-parser": "^1.19.0"
+    "body-parser": "^1.20.1"
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.0",
