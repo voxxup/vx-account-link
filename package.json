@@ -23,7 +23,7 @@
     "ask-sdk-model": "^1.12.0",
     "lodash": "^4.17.11",
     "winston": "^3.2.1",
-    "config": "^3.0.1",
+    "config": "^3.3.8",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "cookie-parser": "^1.4.4",
